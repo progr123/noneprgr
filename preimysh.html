@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML5 и CSS3 сайт</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <a href="index.html"</a>
+      <span>itProger</span>
+
+    </div>
+    <div id="about">
+      <a href="Vozmozhnosti.html" title="Возможности" onclick="slowScroll('#main')">Возможности</a>
+      <a href="preimysh.html" onclick="slowScroll('#overview')" title="Преимущества">Преимущества</a>
+      <a href="contacti.html" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+      <a href="FAQ.html" onclick="slowScroll('#faq')" title="Ответы на вопросы">FAQ</a>
+</div>
+      </header>
+
+
+
+
+
+
+<div id="overview">
+    <h2>Преимущества</h2>
+    <h4>с нами все проще</h4>
+
+    <div class="img">
+      <img src="https://itproger.com/img/courses/1532975967.jpg" alt="">
+      <span>Изучение языка Ruby для начинающих</span>
+    </div>
+    <div class="img">
+      <img src="https://itproger.com/img/courses/1530341233.jpg" alt="">
+      <span>Уроки PhotoShop для начинающих</span>
+    </div>
+    <div class="img">
+      <img src="https://itproger.com/img/courses/1523436361.jpg" alt="">
+      <span>Уроки Swift для начинающих</span>
+    </div>
+    <div class="img">
+      <img src="https://itproger.com/img/courses/1518607198.jpg" alt="">
+      <span>Создание игры Phython 3 с PyGame</span>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+
+</body>
+</html>

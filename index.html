@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML5 и CSS3 сайт</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>itProger</span>
+    </div>
+    <div id="about">
+      <a href="Vozmozhnosti.html" title="Возможности" onclick="slowScroll('#main')">Возможности</a>
+      <a href="preimysh.html" onclick="slowScroll('#overview')" title="Преимущества">Преимущества</a>
+      <a href="contacti.html" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+      <a href="FAQ.html" onclick="slowScroll('#faq')" title="Ответы на вопросы">FAQ</a>
+    </div>
+  </header>
+
+  <div id="top">
+    <h1>Программирование</h1>
+    <h3>как способ жизни!</h3>
+  </div>
+
+
+  <div id="main">
+      <div class="intro">
+        <h2>Наши услуги помогут вам!</h2>
+        <span>Большой выбор всего, что может вам пригодиться</span>
+      </div>
+      <div class="text">
+        <span>У нас вы сможете:Обучиться языкам программирования, узнать как делать сайты и многое другое.</span>
+
+      </div>
+    </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+</body>
+</html>
